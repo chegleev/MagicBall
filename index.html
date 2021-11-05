@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <style>
+    #all {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #cccccc;
+      border-radius: 30px;
+      padding: 20px;
+    }
+    #btn {
+      color: #000000;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<audio id="idaudio" src="snd.mp3" preload="auto"></audio>
+
+<div id="all">
+<center><font id="fnt">Задай вопрос и нажми "ОТВЕТ"</font></center>
+<br><br><br>
+<center><input id="btn" type="button" value="ОТВЕТ" onclick="myBtn()"></center>
+</div>
+
+<script>
+  function myBtn() {
+    document.getElementById('idaudio').play();
+    switch (getRandomInt(0, 10)) {
+      case 0:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Да!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 1:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Нет!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 2:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Я не знаю!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 3:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Думай сам(а)!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 4:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Затрудняюсь ответить...</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 5:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Возможно...</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 6:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Ага!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 7:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Нафига?</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 8:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Ой, всё!</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+
+      case 9:
+      document.getElementById('fnt').innerHTML = "ответ:  <h1>Почему бы и нет?</h1><br><br>Задай вопрос и нажми \"ОТВЕТ\"";
+      break;
+    }
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+</script>
+
+</body>
+</html>
